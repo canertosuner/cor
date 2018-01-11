@@ -21,16 +21,16 @@ namespace CofR
 
             //Create requests
             MoneyTransfer reqModel = new MoneyTransfer(850, "TR9045656456456464454642", "Caner Tosuner");
-            manager.RequestHandler(reqModel);
+            manager.HandleRequest(reqModel);
 
             reqModel = new MoneyTransfer(1450, "TR9045656456456464454642", "Caner Tosuner");
-            manager.RequestHandler(reqModel);
+            manager.HandleRequest(reqModel);
 
             reqModel = new MoneyTransfer(5550, "TR9045656456456464454642", "Caner Tosuner");
-            manager.RequestHandler(reqModel);
+            manager.HandleRequest(reqModel);
 
             reqModel = new MoneyTransfer(9000, "TR9045656456456464454642", "Caner Tosuner");
-            manager.RequestHandler(reqModel);
+            manager.HandleRequest(reqModel);
 
 
             Console.ReadKey();
@@ -52,7 +52,7 @@ namespace CofR
 
     public interface IRequestHandler
     {
-        void RequestHandler(MoneyTransfer transfer);
+        void HandleRequest(MoneyTransfer transfer);
     }
 
     public interface IApprover : IRequestHandler
@@ -64,7 +64,7 @@ namespace CofR
     {
         public IApprover Approver { get; set; }
 
-        public void RequestHandler(MoneyTransfer transfer)
+        public void HandleRequest(MoneyTransfer transfer)
         {
             if (transfer.Amount < 1000)
             {
@@ -73,7 +73,7 @@ namespace CofR
             }
             else if (Approver != null)
             {
-                Approver.RequestHandler(transfer);
+                Approver.HandleRequest(transfer);
             }
         }
     }
@@ -81,7 +81,7 @@ namespace CofR
     public class Director : IApprover
     {
         public IApprover Approver { get; set; }
-        public void RequestHandler(MoneyTransfer transfer)
+        public void HandleRequest(MoneyTransfer transfer)
         {
             if (transfer.Amount < 3000)
             {
@@ -90,7 +90,7 @@ namespace CofR
             }
             else if (Approver != null)
             {
-                Approver.RequestHandler(transfer);
+                Approver.HandleRequest(transfer);
             }
         }
     }
@@ -98,7 +98,7 @@ namespace CofR
     public class GeneralManager : IApprover
     {
         public IApprover Approver { get; set; }
-        public void RequestHandler(MoneyTransfer transfer)
+        public void HandleRequest(MoneyTransfer transfer)
         {
             if (transfer.Amount < 7000)
             {
@@ -107,7 +107,7 @@ namespace CofR
             }
             else if (Approver != null)
             {
-                Approver.RequestHandler(transfer);
+                Approver.HandleRequest(transfer);
             }
         }
     }
