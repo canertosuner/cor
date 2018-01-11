@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace COR
+namespace COR_Case
 {
     public class Product
     {

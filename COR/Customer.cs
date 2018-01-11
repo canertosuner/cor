@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace COR
+namespace COR_Case
 {
     public class Customer
     {

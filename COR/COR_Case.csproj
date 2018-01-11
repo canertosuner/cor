@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{7418432E-ACD6-4592-8CD8-BA1AF19C00AB}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>COR</RootNamespace>
-    <AssemblyName>COR</AssemblyName>
+    <RootNamespace>COR_Case</RootNamespace>
+    <AssemblyName>COR_Case</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

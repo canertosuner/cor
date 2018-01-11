@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace COR
+namespace COR_Case
 {
     class Program
     {
